@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuth } from "@/firebase/auth";
+import { PiUserBold   } from "react-icons/pi";
 
 import Link from "next/link";
 import LinkTag from "./LinkTag";
@@ -44,7 +45,7 @@ const NavbarForDesktop = () => {
             href={"/profile"}
             className="text-center text-sm text-text-color font-[600]"
           >
-            Profile
+            <PiUserBold className="text-background" size={22}/>
           </Link>
         ) : (
           <Link
