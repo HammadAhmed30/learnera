@@ -11,7 +11,8 @@ module.exports = {
         'SectionSpace': '100px',
         'ElementSpace': '25px',
         'NormalSpace': '8px',
-        '2xElementSpace':"50px"
+        '2xElementSpace':"50px",
+        "courseVideoWidth":"calc(100% - 260px)"
       },
       colors: {
         "text-color": "#0D0D0D",

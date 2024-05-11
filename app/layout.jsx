@@ -1,3 +1,4 @@
+import { AuthUserProvider } from "@/firebase/auth";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -11,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + " bg-[#0D0D0D]"}>{children}</body>
+      <body className={inter.className + " bg-[#0D0D0D]"}>
+        <AuthUserProvider>{children}</AuthUserProvider>
+      </body>
     </html>
   );
 }
