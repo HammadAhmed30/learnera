@@ -18,7 +18,8 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "sanity": "^3.41.1",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "valtio": "^1.13.2"
   },
   "devDependencies": {
     "eslint": "^8",

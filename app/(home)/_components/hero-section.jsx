@@ -19,7 +19,7 @@ export default HeroSection;
 const HeroSectionTopPart = () =>{
     return(
         <div>
-            <LargeHeading className={"leading-[110%]"}>Learn Anytohng Pay<br />Nothing</LargeHeading>          
+            <LargeHeading className={"leading-[110%]"}>Learn Anything Pay<br />Nothing</LargeHeading>          
             <Paragraph className={"w-full max-w-[400px] mt-NormalSpace"}>We curate the best videos for specific skills and combine them into courses that rival paid options in quality.</Paragraph>  
             <ul className="text-sm text-foreground font-[400] my-ElementSpace">
                 <li>- Master in-demand skills for free</li>
