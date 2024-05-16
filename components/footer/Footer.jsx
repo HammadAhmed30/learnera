@@ -47,7 +47,7 @@ export default Footer;
 const CompanyDescription = () => {
   return (
     <div>
-      <h1 className="text-2xl text-foreground font-[600]">Learner</h1>
+      <h1 className="text-2xl text-foreground font-[600]">Learnera</h1>
       <Paragraph className={"w-full md:w-[300px] mt-NormalSpace"}>
         We curate the best videos for specific skills and combine them into
         courses that rival paid options in quality.

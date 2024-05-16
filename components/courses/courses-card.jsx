@@ -5,7 +5,7 @@ import { urlForImage } from "@/sanity/lib/image"
 
 export const CoursesCard = ({course}) =>{
     return(
-        <Link href={`/courses/${course?.slug.current}`} className="w-full p-[10px] bg-background border-[1px] border-foreground group">
+        <Link href={`/courses/${course?.slug.current}`} className="w-full p-[10px] bg-background group">
             <div className="w-full h-[150px] rounded-[5px] bg-[green] overflow-hidden">
                 {course&& 
                 <img className="w-full h-full object-cover group-hover:scale-[1.05] transition-all" src={urlForImage(course.image)} alt={course.name} />

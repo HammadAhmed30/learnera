@@ -25,6 +25,12 @@ const course = {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'isPopular',
+      title: 'isPopular',
+      type: 'boolean',
+      initialValue: false
+    },
+    {
       name: 'image',
       title: 'Course Thumbnail',
       type: 'image',

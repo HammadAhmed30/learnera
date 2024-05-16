@@ -5,42 +5,24 @@ import HeroSection from "./_components/hero-section";
 import PopularBlogs from "./_components/popular-blogs";
 import PopularCourses from "./_components/popular-courses";
 import { state } from "@/store";
-import { client } from "@/sanity/lib/client";
 import { useSnapshot } from "valtio";
 import { useEffect } from "react";
+import { fetchPopularCourses } from "@/actions/fetching-popular-courses";
 
 const HomePage = () => {
-  const fetchCourses = async () => {
-    state.loading = true;
-    try {
-      const courses = await client.fetch(`*[_type == "course"]
-        {
-            name,
-            _id,
-            slug,
-            image,
-            chapter
-        }
-        `);
-        state.courses = courses
-    } catch (error) {
-      console.log(error);
-    } finally {
-      state.loading = false;
-    }
-  };
+  const { popularCourses } = useSnapshot(state);
 
   useEffect(() => {
-    fetchCourses();
+    if (popularCourses.length == 0) {
+      fetchPopularCourses();
+    }
   }, []);
-
-  const {courses} = useSnapshot(state)
 
   return (
     <>
       <Wrapper>
         <HeroSection />
-        <PopularCourses courses={courses} />
+        <PopularCourses courses={popularCourses} />
         {/* <PopularBlogs /> */}
       </Wrapper>
     </>

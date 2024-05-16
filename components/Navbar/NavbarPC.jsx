@@ -31,7 +31,7 @@ const NavbarForDesktop = () => {
           href={"/"}
           className="text-2xl text-center text-foreground font-[600] cursor-pointer"
         >
-          Learner
+          Learnera
         </Link>
       </div>
       <div className="gap-[20px] flex">
