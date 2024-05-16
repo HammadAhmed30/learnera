@@ -11,6 +11,7 @@ export const fetchCourse = async (course_Id) => {
         image,
         _id,
         slug,
+        description,
         chapter[]-> {
           name,
           description,

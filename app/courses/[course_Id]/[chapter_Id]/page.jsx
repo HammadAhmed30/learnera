@@ -7,13 +7,20 @@ import { useEffect } from "react";
 
 import ChapterHeadline from "./_components/chapter-headline";
 import ChapterContent from "./_components/chapter-content";
+import { useSnapshot } from "valtio";
+import { state } from "@/store";
+import { fetchCourse } from "@/actions/fetching-course";
 
 const ChapterPage = ({ params }) => {
-  // Functionality to fetch the chapter using params
+
+  const {course} = useSnapshot(state)
+  const {course_Id, chapter_Id} = params;
 
   const { authUser } = useAuth();
   const router = useRouter();
   const pathname = usePathname()
+
+  const chapter = course[0]?.chapter.filter(item => item.slug.current === chapter_Id)
 
 
   useEffect(() => {
@@ -21,15 +28,18 @@ const ChapterPage = ({ params }) => {
       sessionStorage.setItem("redirectUrl", pathname);
       router.push("/login");
     }
+    if(course[0]?.slug.current !== course_Id){
+      fetchCourse(course_Id);
+    }
   }, []);
 
   return (
     <div className="relative">
-      <ChapterHeadline />
+      {course.length>0 && <ChapterHeadline chapter_headline={chapter[0]} />}
       <main className="relative flex">
-        <ChaptersSideBar id={params.chapter_Id} course_Id={params.course_Id} />
+       {course.length>0&& <ChaptersSideBar course={course[0]} chapter_Id={chapter_Id} />}
         <section className="relative mt-[60px] w-full md:w-courseVideoWidth z-[10]">
-          <ChapterContent />
+         {course.length>0 &&  <ChapterContent chapter={chapter[0]} />}
         </section>
       </main>
     </div>

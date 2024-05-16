@@ -22,7 +22,7 @@ const CoursePage = ({ params }) => {
 
   return (
     course && (
-      <Wrapper className={"flex justify-between md:flex-row flex-col"}>
+      <Wrapper className={"flex justify-between md:flex-row flex-col gap-ElementSpace "}>
         <CourseDetails course={course[0]} />
         <ChapterNamers course={course[0]} />
       </Wrapper>
