@@ -21,7 +21,7 @@ const CourseNameTag = ({courseName}) => {
   return (
     courseName && <div
       className="flex items-center w-full h-[60px] border-r-[1px] border-b-[1px] border-foreground text-sm font-[500] px-[10px] text-foreground"
-      title={courseName}>{courseName.slice(0,30)}{courseName.length > 30 ? " ..." : ""}
+      title={courseName}>{courseName.slice(0,25)}{courseName.length > 25 ? " ..." : ""}
     </div>
   );
 };
