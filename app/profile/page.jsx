@@ -2,23 +2,25 @@
 
 import Wrapper from "@/components/Wrapper";
 import ProfileAvatar from "./_components/profile-avatar";
+import YourCourses from "./_components/your-courses";
+import fetchEnrolledCourses from "@/actions/fetching-enrolled-courses";
 
 const { useAuth } = require("@/firebase/auth");
 const { useRouter, usePathname } = require("next/navigation");
 const { useEffect } = require("react");
 import { MdLogout } from "react-icons/md";
-import { MediumHeading } from "@/components/heading/heading-medium";
 import { MediumHeadingx2 } from "@/components/heading/2x-medium-heading";
-import YourCourses from "./_components/your-courses";
 import { Paragraph } from "@/components/reuseable-paragraph";
+import { useSnapshot } from "valtio";
+import { state } from "@/store";
 
 const ProfilePage = () => {
   const router = useRouter();
 
   const { authUser, signOutHandler } = useAuth();
-  const pathname = usePathname();
+  const { enrolledCourses } = useSnapshot(state);
 
-  console.log(authUser);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!authUser) {
@@ -26,6 +28,11 @@ const ProfilePage = () => {
       router.push("/login");
     }
   }, [authUser]);
+
+  useEffect(() => {
+    fetchEnrolledCourses(authUser);
+    console.log("hello worlds profile page")
+  }, []);
 
   return (
     <Wrapper>
@@ -44,8 +51,12 @@ const ProfilePage = () => {
 
       <div className="mt-2xElementSpace">
         <MediumHeadingx2>Your Courses :</MediumHeadingx2>
-        <Paragraph className={"mt-NormalSpace"}>You have enrolled in following courses</Paragraph>
-        <YourCourses/>
+        <Paragraph className={"mt-NormalSpace"}>
+          You have enrolled in following courses
+        </Paragraph>
+        {enrolledCourses.length > 0 && (
+          <YourCourses courses={enrolledCourses} />
+        )}
       </div>
     </Wrapper>
   );

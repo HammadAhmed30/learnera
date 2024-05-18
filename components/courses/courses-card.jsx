@@ -1,4 +1,5 @@
 import Link from "next/link"
+
 import { SmallHeading } from "../heading/heading-small"
 import { Paragraph } from "../reuseable-paragraph"
 import { urlForImage } from "@/sanity/lib/image"

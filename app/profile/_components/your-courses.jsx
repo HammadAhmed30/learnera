@@ -3,9 +3,9 @@ import { state } from '@/store'
 import React from 'react'
 import { useSnapshot } from 'valtio'
 
-export default function YourCourses() {
+export default function YourCourses({courses}) {
 
-    const {courses} = useSnapshot(state)
+
 
   return (
     <div className='w-full mt-ElementSpace '>
