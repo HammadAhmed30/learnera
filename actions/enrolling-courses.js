@@ -1,16 +1,21 @@
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 
-
 import fetchEnrolledCourses from "./fetching-enrolled-courses";
 
-const EnrollInCourse = async (course, authUser ,enrolledCourses) => {
-
+const EnrollInCourse = async (course, authUser, enrolledCourses) => {
   console.log(enrolledCourses);
   try {
     const isCourseEnrolled = enrolledCourses.filter(
       (item) => item._id == course._id && authUser.uid == item.userId
     );
+
+    const chapterCompleted = { isCompleted: false };
+    const newChapters = course.chapter.map((item) => {
+      return { ...item, ...chapterCompleted };
+    });
+
+    console.log(newChapters);
 
     if (isCourseEnrolled.length == 0) {
       await addDoc(collection(db, "courses"), {
@@ -19,9 +24,9 @@ const EnrollInCourse = async (course, authUser ,enrolledCourses) => {
         name: course.name,
         slug: course.slug,
         image: course.image,
-        chapter: course.chapter,
+        chapter: newChapters,
       });
-      fetchEnrolledCourses(authUser)
+      fetchEnrolledCourses(authUser);
     }
   } catch (error) {
     console.log(error);

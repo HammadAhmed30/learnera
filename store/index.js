@@ -5,5 +5,5 @@ export const state = proxy({
     loading:false,
     course:[],
     popularCourses:[],
-    enrolledCourses:[]
+    enrolledCourses:[],
 })
