@@ -2,8 +2,6 @@ import { CoursesCard } from "./courses-card";
 
 export const CoursesGrid = ({ className, courses, searchCourse }) => {
 
-
-  console.log(courses)
   const searchString = searchCourse || ""
 
   return (

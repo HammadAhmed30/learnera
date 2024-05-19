@@ -4,7 +4,6 @@ import { Paragraph } from "@/components/reuseable-paragraph";
 import { urlForImage } from "@/sanity/lib/image";
 
 export default function CourseDetails({ course }) {
-  console.log(course);
   return (
     <div className="mt-ElementSpace">
       <div className="w-full h-[470px]">

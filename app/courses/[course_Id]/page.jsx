@@ -9,22 +9,18 @@ import { fetchCourse } from "@/actions/fetching-course";
 
 import CourseDetails from "./_components/course-details";
 import ChapterNamers from "./_components/chapter-names";
-import fetchEnrolledCourses from "@/actions/fetching-enrolled-courses";
-import { useAuth } from "@/firebase/auth";
 
 const CoursePage = ({ params }) => {
   const { course_Id } = params;
-  const { course, loading } = useSnapshot(state);
-  const { authUser } = useAuth();
+
+  const { course } = useSnapshot(state);
 
   useEffect(() => {
     fetchCourse(course_Id);
-    fetchEnrolledCourses(authUser);
   }, []);
 
   return (
-    !loading &&
-    course && (
+    course[0] && (
       <Wrapper
         className={
           "flex justify-between md:flex-row flex-col gap-ElementSpace "

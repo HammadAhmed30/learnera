@@ -5,7 +5,6 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 
 const fetchEnrolledCourses = async (authUser) => {
   let data = [];
-  state.loading = true;
 
   try {
     const q = query(
@@ -16,14 +15,16 @@ const fetchEnrolledCourses = async (authUser) => {
     querySnapshot.forEach((doc) => {
       data.push({ ...doc.data(), id: doc.id });
     });
+    state.enrolledCourses = data
 
-    state.enrolledCourses = data;
-    state.loading = false;
+    let enrolledCoursesString = JSON.stringify(data);
+    localStorage.setItem("enrolledCourses", enrolledCoursesString);
+
+    
   } catch (error) {
     console.log(error);
   } finally {
     state.enrolledCourses = data;
-    state.loading = false;
   }
 };
 
