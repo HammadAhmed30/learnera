@@ -3,23 +3,48 @@ import { Paragraph } from "@/components/reuseable-paragraph";
 import { FaRegCircleCheck } from "react-icons/fa6";
 
 import ChapterWrapper from "@/components/WrapperCourseVideo";
+import onChapterComplete from "@/actions/complete-chapter";
+import fetchEnrolledCourses from "@/actions/fetching-enrolled-courses";
 
-const ChapterContent = ({ chapter }) => {
+const ChapterContent = ({
+  chapter,
+  enrolledCoursesChapters,
+  p_enrolledCourse,
+  chapter_Id,
+  authUser
+}) => {
+  const updateChapterComplete = () => {
+    const updatedChp = p_enrolledCourse[0]?.chapter.map((item) => {
+      if (item.slug.current === chapter_Id) {
+        return { ...item, isCompleted: !enrolledCoursesChapters?.isCompleted };
+      }
+      return item;
+    });
+    onChapterComplete(updatedChp, p_enrolledCourse[0]?.id);
+
+    fetchEnrolledCourses(authUser)
+
+    console.log(updatedChp);
+  };
+
   return (
     <ChapterWrapper className={"pt-2xElementSpace"}>
       <ChapterVideoPlayer src={chapter?.url} />
+
       <div className=" flex justify-end">
-
-      <button
-          className={`flex items-center w-full gap-[5px] my-ElementSpace md:max-w-[200px] h-[50px] justify-center bg-secondaryColor text-sm font-[500] text-foreground`}
-          // onClick={signOutHandler}
-        >
-          Mark as Complete {" "}
-          <FaRegCircleCheck />
-
-        </button>
+        {!enrolledCoursesChapters?.isCompleted && (
+          <button
+            className={`flex items-center w-full gap-[5px] mt-ElementSpace md:max-w-[200px] h-[50px] justify-center bg-secondaryColor text-sm font-[500] text-foreground`}
+            onClick={() => {
+              updateChapterComplete();
+            }}
+          >
+            Mark as Complete <FaRegCircleCheck />
+          </button>
+        )}
       </div>
-      <ChapterDescription description= {chapter?.description} />
+
+      <ChapterDescription description={chapter?.description} />
     </ChapterWrapper>
   );
 };
@@ -35,9 +60,11 @@ const ChapterVideoPlayer = ({ src }) => {
   );
 };
 
-const ChapterDescription = ({description}) => {
-  return <div>
-    <MediumHeading>Description{" "}:</MediumHeading>
-    <Paragraph className={"mt-NormalSpace"}>{description}</Paragraph>
-  </div>;
+const ChapterDescription = ({ description }) => {
+  return (
+    <div className="mt-ElementSpace">
+      <MediumHeading>Description :</MediumHeading>
+      <Paragraph className={"mt-NormalSpace"}>{description}</Paragraph>
+    </div>
+  );
 };

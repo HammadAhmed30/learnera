@@ -17,8 +17,6 @@ const fetchEnrolledCourses = async (authUser) => {
     });
     state.enrolledCourses = data
 
-    let enrolledCoursesString = JSON.stringify(data);
-    localStorage.setItem("enrolledCourses", enrolledCoursesString);
 
     
   } catch (error) {

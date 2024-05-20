@@ -20,7 +20,9 @@ module.exports = {
         "foreground":"white",
         "paragraphColor":"#424242",
         "secondaryColor":"#F262FF",
-        "selectedChapter":"#262626"
+        "selectedChapter":"#262626",
+        "chpCompletion":"#0d2600",
+        "borderGreen":"#146e2f"
       },
 
       backgroundImage: {
