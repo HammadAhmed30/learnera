@@ -1,4 +1,6 @@
 import { AuthUserProvider } from "@/firebase/auth";
+import { Analytics } from "@vercel/analytics/react"
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -14,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className + " bg-[#0D0D0D]"}>
         <AuthUserProvider>{children}</AuthUserProvider>
+        <Analytics />
       </body>
     </html>
   );
