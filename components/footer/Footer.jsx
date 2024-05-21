@@ -66,7 +66,7 @@ const WebsiteLinks = () => {
       </div>
       <div className="flex flex-col gap-NormalSpace">
         <SmallHeading>ABOUT</SmallHeading>
-        <Links link={"/coming-soon"}>Read Me</Links>
+        <Links link={"/read-me"}>Read Me</Links>
         <Links link={"/coming-soon"}>Hire a Teacher</Links>
         <Links link={"/coming-soon"}>Hire a Freelancer</Links>
 
@@ -79,17 +79,36 @@ const WebsiteLinks = () => {
 const NewsLetterTab = () => {
   return (
     <div>
-      <MediumHeading>NewsLetter</MediumHeading>
-      <form className="flex items-center mt-NormalSpace">
-        <input
-          className="bg-background text-foreground h-[40px] w-[200px] text-sm font-[300] outline-none px-[7px] border-[1px] border-foreground"
-          type="text"
-          placeholder="Search for a course"
-        />
-        <button className="bg-secondaryColor h-[40px] w-[60px] text-xs">
-          Go
-        </button>
-      </form>
+      <MediumHeading className={"mb-NormalSpace"}>
+        Contact Details
+      </MediumHeading>
+      <Paragraph className={"italic"}>
+        WhatsApp :{" "}
+        <a
+          className="text-secondaryColor opacity-[.6] hover:opacity-[1] transition-all"
+          href="https://wa.me/+923141418477"
+        >
+          +92 314 1418477
+        </a>
+      </Paragraph>
+      <Paragraph className={"italic"}>
+        Call :{" "}
+        <a
+          className="text-secondaryColor opacity-[.6] hover:opacity-[1] transition-all"
+          href="tel:+923141418477"
+        >
+          +92 314 1418477
+        </a>
+      </Paragraph>
+      <Paragraph className={"italic"}>
+        E-mail :{" "}
+        <a
+          className="text-secondaryColor opacity-[.6] hover:opacity-[1] transition-all"
+          href="mailto:30lazers@gmail.com"
+        >
+          30lazers@gmail.com
+        </a>
+      </Paragraph>
     </div>
   );
 };
