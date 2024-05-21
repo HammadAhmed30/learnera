@@ -42,7 +42,14 @@ const LoginPage = () => {
       const redirectUrl = sessionStorage.getItem("redirectUrl") || "/";
       router.push(redirectUrl);
     }
+
   }, [authUser, isLoading]);
+
+  useEffect(()=>{
+    document.title = "Login | Learnera Uni";
+
+  },[])
+
   return (
     <main className="flex h-[100vh]">
       <div className="w-full  p-8 md:p-14 flex items-center justify-center">

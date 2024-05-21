@@ -16,6 +16,7 @@ const HomePage = () => {
     if (popularCourses.length == 0) {
       fetchPopularCourses();
     }
+    document.title = "Learnera Uni | Home Page";
   }, []);
 
   return (

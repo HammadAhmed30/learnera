@@ -24,7 +24,7 @@ const ListOfLinks = [
 
 const NavbarForMobile = () => {
   return (
-    <nav className="flex justify-between border-b-[1px] border-foreground w-full h-[75px] items-center">
+    <nav className="flex justify-between border-b-[1px] border-foreground w-full h-[60px] items-center">
       <SideMenu>
         <NavMobileContent/>
       </SideMenu>
@@ -37,7 +37,7 @@ const NavbarForMobile = () => {
         </Link>
       </div>
       <div
-        className="h-full border-l w-[75px] flex justify-center items-center"
+        className="h-full border-l w-[60px] flex justify-center items-center"
         onClick={() => {
           state.sideMenu = true;
         }}

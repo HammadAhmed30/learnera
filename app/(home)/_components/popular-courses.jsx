@@ -7,8 +7,7 @@ const PopularCourses = ({ courses }) => {
     <section className="w-full">
       <MediumHeading>Popular Courses</MediumHeading>
       <Paragraph className={"w-full max-w-[400px] mt-NormalSpace"}>
-        We curate the best videos for specific skills and combine them into
-        courses that rival paid options in quality.
+      Here are some popular and hot courses circulating around the internet, worth hundreds of dollars.
       </Paragraph>
       <CoursesGrid courses={courses} />
     </section>

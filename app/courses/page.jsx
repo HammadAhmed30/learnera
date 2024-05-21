@@ -14,6 +14,8 @@ const CoursesPage = () => {
   const { courses } = useSnapshot(state);
 
   useEffect(() => {
+    document.title = "Courses | Learera Uni";
+
     if (courses.length == 0) {
       fetchCourses();
     }

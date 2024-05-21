@@ -27,7 +27,7 @@ const NavMobileContent = () => {
 
   return (
     <nav className="flex flex-col justify-evenly w-full h-[100vh] items-center px-ElementSpace  ">
-      <div className="h-[75px] w-full flex justify-center items-center">
+      <div className="h-[60px] w-full flex justify-center items-center">
         <Link
           href={"/"}
           className="text-2xl text-center text-foreground font-[600] cursor-pointer"
@@ -45,7 +45,7 @@ const NavMobileContent = () => {
           />
         ))}
       </div>
-      <div className=" h-[75px] bg-foreground w-full flex justify-center items-center">
+      <div className=" h-[60px] bg-foreground w-full flex justify-center items-center">
         {authUser ? (
           <Link
             onClick={() => (state.sideMenu = false)}

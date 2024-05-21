@@ -13,14 +13,18 @@ const CoursesPageHeading = ({ courses }) => {
     <section className="w-full mt-SectionSpace flex flex-col items-center">
       <LargeHeading className={"text-center"}>Courses</LargeHeading>
       <Paragraph className={"w-full max-w-[400px] text-center mt-NormalSpace"}>
-        You can select any of the following careers to make a good living, these
-        are the full courses you would require to land your first internship.
+        Each of the following is a complete course with a comprehensive roadmap.
+        Complete the course and land a job without paying a single penny.
       </Paragraph>
       <SearchCoures
         setSearchCourse={setSearchCourse}
         searchCourse={searchCourse}
       />
-      <CoursesGrid className={"mt-SectionSpace"} courses={courses} searchCourse={searchCourse} />
+      <CoursesGrid
+        className={"mt-SectionSpace"}
+        courses={courses}
+        searchCourse={searchCourse}
+      />
     </section>
   );
 };

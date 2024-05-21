@@ -48,8 +48,8 @@ const CompanyDescription = () => {
     <div>
       <h1 className="text-2xl text-foreground font-[600]">Learnera</h1>
       <Paragraph className={"w-full md:w-[300px] mt-NormalSpace"}>
-        We curate the best videos for specific skills and combine them into
-        courses that rival paid options in quality.
+        We help people learn new skills and provide a complete roadmap so you
+        don't have to waste your time finding the right one.
       </Paragraph>
     </div>
   );
@@ -98,15 +98,15 @@ const NewsLetterTab = () => {
 const MediaLinksComponents = () => {
   return (
     <div className="flex justify-center items-center gap-[15px]">
-          <a target="_black" href="https://www.instagram.com/etralbit/">
-            <FaInstagram size={26} className="text-foreground" />
-          </a>
-          <a target="_black" href="https://x.com/etralbit">
-            <FaXTwitter size={26} className="text-foreground" />
-          </a>
-          <a target="_black" href="https://etralbit.vercel.app/">
-            <IoIosGlobe size={26} className="text-foreground" />
-          </a>
+      <a target="_black" href="https://www.instagram.com/etralbit/">
+        <FaInstagram size={26} className="text-foreground" />
+      </a>
+      <a target="_black" href="https://x.com/etralbit">
+        <FaXTwitter size={26} className="text-foreground" />
+      </a>
+      <a target="_black" href="https://etralbit.vercel.app/">
+        <IoIosGlobe size={26} className="text-foreground" />
+      </a>
     </div>
   );
 };

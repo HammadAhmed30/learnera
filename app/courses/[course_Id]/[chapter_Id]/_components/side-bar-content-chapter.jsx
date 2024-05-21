@@ -12,6 +12,7 @@ export default function ChapterSideBarContent({
         <CourseNameTag courseName={course?.name} />
         {course?.chapter.map((chapter, index) => (
           <ChapterButton
+          className="border-r-0"
             key={index}
             course={course}
             chapter_Id={chapter_Id}
@@ -28,7 +29,7 @@ const CourseNameTag = ({ courseName }) => {
   return (
     courseName && (
       <div
-        className="flex items-center w-full h-[60px] border-r-[1px] border-b-[1px] border-foreground text-sm font-[500] px-[10px] text-foreground"
+        className="flex items-center w-full h-[60px] border-r-0 border-b-[1px] border-foreground text-sm font-[500] px-[10px] text-foreground"
         title={courseName}
       >
         {courseName.slice(0, 25)}

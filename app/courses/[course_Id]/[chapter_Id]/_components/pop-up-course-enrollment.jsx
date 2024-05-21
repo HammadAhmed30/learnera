@@ -17,7 +17,7 @@ export default function PopUpForCourseEnrollment({ EnrollInCourse }) {
         </MediumHeading>
 
         <button
-          className={`flex mt-ElementSpace items-center w-full md:max-w-[200px] h-[50px] justify-center bg-secondaryColor text-sm font-[500] text-foreground `}
+          className={`flex mt-ElementSpace items-center w-[90%] md:max-w-[200px] h-[50px] justify-center bg-secondaryColor text-sm font-[500] text-foreground `}
           onClick={() => {
             EnrollInCourse();
             setDisplay(false)

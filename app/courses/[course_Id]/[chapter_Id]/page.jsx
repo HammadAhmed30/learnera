@@ -14,8 +14,9 @@ import ChapterContent from "./_components/chapter-content";
 import PopUpForCourseEnrollment from "./_components/pop-up-course-enrollment";
 import EnrollInCourse from "@/actions/enrolling-courses";
 import fetchEnrolledCourses from "@/actions/fetching-enrolled-courses";
-import SideMenu from "@/components/side-menu";
 import ChapterSideBarContent from "./_components/side-bar-content-chapter";
+import SideChapterMenu from "@/components/chapterSideMenu";
+
 
 const ChapterPage = ({ params }) => {
   const { authUser } = useAuth();
@@ -37,6 +38,7 @@ const ChapterPage = ({ params }) => {
   };
 
   useEffect(() => {
+    document.title = "Learera Uni | Courses"
     if (!authUser) {
       sessionStorage.setItem("redirectUrl", pathname);
       router.push("/login");
@@ -62,13 +64,13 @@ const ChapterPage = ({ params }) => {
   return (
     <div className="relative">
       {course?.length > 0 && p_enrolledCourse?.length > 0 && (
-        <SideMenu>
+        <SideChapterMenu>
           <ChapterSideBarContent
             course={course[0]}
             chapter_Id={chapter_Id}
             p_enrolledCourse={p_enrolledCourse[0]}
           />
-        </SideMenu>
+        </SideChapterMenu>
       )}
       {!isEnrolled && (
         <PopUpForCourseEnrollment EnrollInCourse={getEnrollInCourse} />
@@ -77,7 +79,7 @@ const ChapterPage = ({ params }) => {
       <div
         className=" relative border border-t-0 border-l-0 w-[60px] left-0 md:hidden top-[60px] h-[60px] flex justify-center items-center z-[1000]"
         onClick={() => {
-          state.sideMenu = true;
+          state.sideChapterMenu = true;
         }}
       >
         <MdMenuOpen className="text-foreground cursor-pointer" size={26} />

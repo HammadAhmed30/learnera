@@ -7,4 +7,5 @@ export const state = proxy({
     popularCourses:[],
     enrolledCourses:[],
     sideMenu:false,
+    sideChapterMenu:false,
 })

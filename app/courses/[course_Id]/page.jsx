@@ -9,6 +9,7 @@ import { fetchCourse } from "@/actions/fetching-course";
 
 import CourseDetails from "./_components/course-details";
 import ChapterNamers from "./_components/chapter-names";
+import Head from "next/head";
 
 const CoursePage = ({ params }) => {
   const { course_Id } = params;
@@ -17,6 +18,7 @@ const CoursePage = ({ params }) => {
 
   useEffect(() => {
     fetchCourse(course_Id);
+    document.title = "Learera Uni | Courses";
   }, []);
 
   return (
