@@ -36,10 +36,10 @@ const ProfilePage = () => {
 
   return (
     <Wrapper>
-      <div className={" flex justify-between items-center mt-2xElementSpace"}>
+      <div className={" flex md:flex-row flex-col justify-between items-center mt-2xElementSpace"}>
         <ProfileAvatar />
         <button
-          className={`flex items-center w-full md:max-w-[200px] h-[50px] justify-center bg-secondaryColor text-sm font-[500] text-foreground`}
+          className={`flex md:mt-0 mt-ElementSpace items-center w-full md:max-w-[200px] h-[50px] justify-center bg-secondaryColor text-sm font-[500] text-foreground`}
           onClick={signOutHandler}
         >
           Sign Out{" "}

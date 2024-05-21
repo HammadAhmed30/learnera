@@ -1,26 +1,25 @@
 import { MediumHeading } from "../heading/heading-medium";
 import { SmallHeading } from "../heading/heading-small";
 import { Links } from "../links";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { IoIosGlobe } from "react-icons/io";
 const { Paragraph } = require("../reuseable-paragraph");
 
 import Wrapper from "../Wrapper";
 
 const MediaLinks = [
   {
-    name: "Twitter",
-    link: "/",
+    name: "<FaInstagram/>",
+    link: "https://www.instagram.com/etralbit/",
   },
   {
-    name: "Twitter",
-    link: "/",
+    name: "FaXTwitter",
+    link: "https://x.com/etralbit",
   },
   {
-    name: "Twitter",
-    link: "/",
-  },
-  {
-    name: "Twitter",
-    link: "/",
+    name: "IoIosGlobe",
+    link: "https://etralbit.vercel.app/",
   },
 ];
 
@@ -28,7 +27,7 @@ const Footer = ({ className }) => {
   return (
     <Wrapper className={"w-full mt-SectionSpace " + className || ""}>
       {/* Upper Footer Section */}
-      <section className="pb-2xElementSpace border-b-[1px] border-foreground flex justify-between">
+      <section className="pb-2xElementSpace border-b-[1px] border-foreground flex md:flex-row flex-col justify-between gap-[30px]">
         <CompanyDescription />
         <WebsiteLinks />
         <NewsLetterTab />
@@ -58,7 +57,7 @@ const CompanyDescription = () => {
 
 const WebsiteLinks = () => {
   return (
-    <div className="flex justify-between gap-[30px]">
+    <div className="flex md:flex-row flex-col justify-between gap-[30px]">
       <div className="flex flex-col gap-NormalSpace">
         <SmallHeading>LEARNING</SmallHeading>
         <Links link={"/courses"}>Courses</Links>
@@ -99,13 +98,15 @@ const NewsLetterTab = () => {
 const MediaLinksComponents = () => {
   return (
     <div className="flex justify-center items-center gap-[15px]">
-      {MediaLinks.map((item, index) => {
-        return (
-          <Links key={index} link={item.link}>
-            <div className="w-[30px] h-[30px] rounded-full bg-foreground"></div>
-          </Links>
-        );
-      })}
+          <a target="_black" href="https://www.instagram.com/etralbit/">
+            <FaInstagram size={26} className="text-foreground" />
+          </a>
+          <a target="_black" href="https://x.com/etralbit">
+            <FaXTwitter size={26} className="text-foreground" />
+          </a>
+          <a target="_black" href="https://etralbit.vercel.app/">
+            <IoIosGlobe size={26} className="text-foreground" />
+          </a>
     </div>
   );
 };

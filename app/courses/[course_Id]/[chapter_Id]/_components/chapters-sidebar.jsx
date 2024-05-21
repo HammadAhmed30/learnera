@@ -2,7 +2,7 @@ import { ChapterButton } from "./chapter-button";
 
 export const ChaptersSideBar = ({ course, chapter_Id, p_enrolledCourse }) => {
   return (
-    <div className="fixed md:relative left-[-265px] top-0 md:left-0 w-[260px] border-foreground">
+    <div className="relative md:block hidden left-[-305px] top-0 md:left-0 w-[260px] border-foreground">
       <CourseNameTag courseName={course?.name} />
       {course?.chapter.map((chapter, index) => (
         <ChapterButton

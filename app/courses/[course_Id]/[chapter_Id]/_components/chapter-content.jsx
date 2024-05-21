@@ -54,7 +54,7 @@ export default ChapterContent;
 const ChapterVideoPlayer = ({ src }) => {
   return (
     <iframe
-      className="w-full h-[500px] object-contain border-[1px] border-foreground"
+      className="w-full md:h-[500px] h-[300px] object-contain border-[1px] border-foreground"
       src={src}
     ></iframe>
   );

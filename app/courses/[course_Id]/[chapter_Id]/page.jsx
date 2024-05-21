@@ -7,12 +7,15 @@ import { useEffect, useState } from "react";
 import { useSnapshot } from "valtio";
 import { state } from "@/store";
 import { fetchCourse } from "@/actions/fetching-course";
+import { MdMenuOpen } from "react-icons/md";
 
 import ChapterHeadline from "./_components/chapter-headline";
 import ChapterContent from "./_components/chapter-content";
 import PopUpForCourseEnrollment from "./_components/pop-up-course-enrollment";
 import EnrollInCourse from "@/actions/enrolling-courses";
 import fetchEnrolledCourses from "@/actions/fetching-enrolled-courses";
+import SideMenu from "@/components/side-menu";
+import ChapterSideBarContent from "./_components/side-bar-content-chapter";
 
 const ChapterPage = ({ params }) => {
   const { authUser } = useAuth();
@@ -58,14 +61,35 @@ const ChapterPage = ({ params }) => {
 
   return (
     <div className="relative">
+      {course?.length > 0 && p_enrolledCourse?.length > 0 && (
+        <SideMenu>
+          <ChapterSideBarContent
+            course={course[0]}
+            chapter_Id={chapter_Id}
+            p_enrolledCourse={p_enrolledCourse[0]}
+          />
+        </SideMenu>
+      )}
       {!isEnrolled && (
         <PopUpForCourseEnrollment EnrollInCourse={getEnrollInCourse} />
       )}
       {course?.length > 0 && <ChapterHeadline chapter_headline={chapter[0]} />}
+      <div
+        className=" relative border border-t-0 border-l-0 w-[60px] left-0 md:hidden top-[60px] h-[60px] flex justify-center items-center z-[1000]"
+        onClick={() => {
+          state.sideMenu = true;
+        }}
+      >
+        <MdMenuOpen className="text-foreground cursor-pointer" size={26} />
+      </div>
 
       <main className="relative flex">
         {course?.length > 0 && p_enrolledCourse?.length > 0 && (
-          <ChaptersSideBar course={course[0]} chapter_Id={chapter_Id} p_enrolledCourse={p_enrolledCourse[0]} />
+          <ChaptersSideBar
+            course={course[0]}
+            chapter_Id={chapter_Id}
+            p_enrolledCourse={p_enrolledCourse[0]}
+          />
         )}
         <section className="relative mt-[60px] w-full md:w-courseVideoWidth z-[10]">
           {course?.length > 0 && enrolledCoursesChapters?.length > 0 && (

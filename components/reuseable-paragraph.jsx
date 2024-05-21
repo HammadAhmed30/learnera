@@ -1,6 +1,6 @@
 export const Paragraph = ({ children, className }) => {
   return (
-    <p className={"text-sm text-paragraphColor font-[600] " + className || ""}>{children}</p>
+    <p className={"md:text-sm text-xs text-paragraphColor font-[600] " + className || ""}>{children}</p>
   );
 };
 

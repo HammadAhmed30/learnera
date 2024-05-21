@@ -6,7 +6,7 @@ import { urlForImage } from "@/sanity/lib/image";
 export default function CourseDetails({ course }) {
   return (
     <div className="mt-ElementSpace">
-      <div className="w-full h-[470px]">
+      <div className="w-full md:h-[470px] h-[240px]">
         {course && (
           <img
             className="w-full h-full object-cover border-[1px] border-foreground"

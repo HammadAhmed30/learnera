@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 
-const LinkTag = ({link,name})=>{
+const LinkTag = ({onClick, link,name})=>{
     return(
-        <Link className="text-foreground text-xs font-[300]" href={link}>{name}</Link>
+        <Link onClick={onClick} className="text-foreground md:text-xs text-sm font-[300]" href={link}>{name}</Link>
     )
 }
 
