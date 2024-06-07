@@ -3,6 +3,6 @@ import React from 'react'
 
 export default function StartCourseButton({course_slug, chapter_slug}) {
   return (
-    <Link href={`/courses/${course_slug}/${chapter_slug}`}  className={`flex items-center w-full h-[60px] justify-center bg-secondaryColor mt-ElementSpace text-sm font-[500] px-[10px] text-foreground md:min-w-[300px]`} >Start the Course</Link>
+    <Link href={`/courses/${course_slug}/${chapter_slug}`}  className={`flex items-center w-full h-[60px] justify-center bg-secondaryColor mt-ElementSpace text-sm font-[500] px-[10px] text-foreground md:min-w-[300px] sticky bottom-NormalSpace shadow-lg shadow-background `} >Start the Course</Link>
   )
 }

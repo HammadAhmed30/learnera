@@ -2,6 +2,7 @@ import { MediumHeadingx2 } from "@/components/heading/2x-medium-heading";
 import { MediumHeading } from "@/components/heading/heading-medium";
 import { Paragraph } from "@/components/reuseable-paragraph";
 import { urlForImage } from "@/sanity/lib/image";
+import StartCourseButton from "./start-course-btn";
 
 export default function CourseDetails({ course }) {
   return (

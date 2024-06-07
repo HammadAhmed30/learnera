@@ -27,6 +27,7 @@ const NavMobileContent = () => {
 
   return (
     <nav className="flex flex-col justify-evenly w-full h-[100vh] items-center px-ElementSpace  ">
+
       <div className="h-[60px] w-full flex justify-center items-center">
         <Link
           href={"/"}
@@ -64,6 +65,7 @@ const NavMobileContent = () => {
           </Link>
         )}
       </div>
+
     </nav>
   );
 };

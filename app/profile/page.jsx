@@ -10,7 +10,6 @@ import { MediumHeadingx2 } from "@/components/heading/2x-medium-heading";
 import { Paragraph } from "@/components/reuseable-paragraph";
 import { useSnapshot } from "valtio";
 import { state } from "@/store";
-import Head from "next/head";
 
 const { useAuth } = require("@/firebase/auth");
 const { useRouter, usePathname } = require("next/navigation");

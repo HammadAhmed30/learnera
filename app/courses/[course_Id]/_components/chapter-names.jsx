@@ -7,7 +7,7 @@ import StartCourseButton from "./start-course-btn";
 export default function ChapterNamers({ course }) {
   return (
     <div>
-      <MediumHeading className={"mb-ElementSpace mt-ElementSpace"}>
+      <MediumHeading className={"mb-ElementSpace mt-ElementSpace relative"}>
         Chapters
       </MediumHeading>
       <div className="border-foreground border-t-[1px] ">

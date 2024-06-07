@@ -7,12 +7,12 @@ export default function ChapterSideBarContent({
   p_enrolledCourse,
 }) {
   return (
-    <div className="mt-[76px] border-foreground border-t">
+    <div className="mt-[62px] border-foreground h-full border-t ">
       <div className="w-full">
         <CourseNameTag courseName={course?.name} />
         {course?.chapter.map((chapter, index) => (
           <ChapterButton
-          className="border-r-0"
+          className=" border-r-[0px] "
             key={index}
             course={course}
             chapter_Id={chapter_Id}
