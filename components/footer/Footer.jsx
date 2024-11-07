@@ -83,24 +83,6 @@ const NewsLetterTab = () => {
         Contact Details
       </MediumHeading>
       <Paragraph className={"italic"}>
-        WhatsApp :{" "}
-        <a
-          className="text-secondaryColor opacity-[.6] hover:opacity-[1] transition-all"
-          href="https://wa.me/+923141418477"
-        >
-          +92 314 1418477
-        </a>
-      </Paragraph>
-      <Paragraph className={"italic"}>
-        Call :{" "}
-        <a
-          className="text-secondaryColor opacity-[.6] hover:opacity-[1] transition-all"
-          href="tel:+923141418477"
-        >
-          +92 314 1418477
-        </a>
-      </Paragraph>
-      <Paragraph className={"italic"}>
         E-mail :{" "}
         <a
           className="text-secondaryColor opacity-[.6] hover:opacity-[1] transition-all"
